@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP BURGER</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-image: url("https://www.dropbox.com/scl/fi/mgahfpzwi55z1z3bvsqhh/fondo.jpeg?rlkey=7p3ge8siwwke9mzcqcukm00t4&st=qcz3puw2&raw=1");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Capa oscura */
+        .overlay{
+            background-color: rgba(0,0,0,0.6);
+            min-height: 100vh;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* HEADER */
+        header{
+            background-color: rgb(235, 40, 18);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: clamp(2rem, 5vw, 4rem);
+            border-radius: 10px;
+        }
+
+        /* TITULO */
+        section{
+            color: white;
+            text-align: center;
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            margin: 30px 0;
+            font-weight: bold;
+        }
+
+        /* CONTENEDOR */
+        .contenedor{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            justify-content: center;
+        }
+
+        /* TARJETAS */
+        .card{
+            background-color: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover{
+            transform: scale(1.05);
+        }
+
+        .card img{
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card p{
+            margin-top: 10px;
+            font-size: 1.3rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .precio{
+            color: #ff3b3b;
+        }
+
+        /* NAV */
+        nav{
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav button{
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            border: none;
+            background-color: white;
+            color: #e74c3c;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        nav button:hover{
+            background-color: #c0392b;
+            color: white;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 768px){
+
+            body{
+                padding: 10px;
+            }
+
+            .card img{
+                height: 200px;
+            }
+
+            nav button{
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media(max-width: 480px){
+
+            .card p{
+                font-size: 1.1rem;
+            }
+
+            .card img{
+                height: 180px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="overlay">
+
+        <header>
+            <b><em>TOP BURGER</em></b>
+        </header>
+
+        <section>
+            PROMOCIONES
+        </section>
+
+        <div class="contenedor">
+
+            <div class="card">
+                <img src="https://www.dropbox.com/scl/fi/1wm27djokkkokinj8cih5/hamburguesa.jpg?rlkey=3m5177xpj23frceo46ka1akpe&st=x72yha06&raw=1" alt="Hamburguesa">
+                <p>Hamburguesa</p>
+                <p class="precio">2 x 40 Bs</p>
+            </div>
+
+            <div class="card">
+                <img src="https://www.dropbox.com/scl/fi/bjp7e1rak00ne8ebqcpp8/pollo-broaster.jpg?rlkey=mjgimyc9au0gfu9oq02bp8s6h&st=6ttt51jt&raw=1" alt="Pollo Broaster">
+                <p>Pollo Broaster</p>
+                <p class="precio">32 Bs</p>
+            </div>
+
+            <div class="card">
+                <img src="https://www.dropbox.com/scl/fi/mr03t5gnya1is8n2grgqi/pollo-a-la-canasta.jpg?rlkey=u8lsu3043v2ktg3f4z44auu67&st=zw7k2oc5&raw=1" alt="Pollo a la Canasta">
+                <p>Pollo a la Canasta</p>
+                <p class="precio">30 Bs</p>
+            </div>
+
+            <div class="card">
+                <img src="https://www.dropbox.com/scl/fi/1sfg1w5rpvlxwi93nkmik/salchipapas.jpg?rlkey=3b8v963u202pu26p0mztqdw68&st=hn3cidgm&raw=1" alt="Salchipapas">
+                <p>Salchipapas</p>
+                <p class="precio">15 Bs</p>
+            </div>
+
+            <div class="card">
+                <img src="https://www.dropbox.com/scl/fi/qu3c6rca9gnri6sge1v8f/milanesa.png?rlkey=lr2j0fwlxx99hgqw1qyk3sc4k&st=0d7v03f4&raw=1" alt="Milanesa">
+                <p>Milanesa</p>
+                <p class="precio">20 Bs</p>
+            </div>
+
+            <div class="card">
+                <img src="https://www.dropbox.com/scl/fi/bnz1r6onydusmv2terywo/silpancho.jpg?rlkey=wpz364m4lrsjlqzfyuju3lmjp&st=3vl4mtv2&raw=1" alt="Silpancho">
+                <p>Silpancho</p>
+                <p class="precio">20 Bs</p>
+            </div>
+
+        </div>
+
+        <nav>
+            <button>INICIO</button>
+            <button>MENÚ</button>
+            <button>UBICACIONES</button>
+        </nav>
+
+    </div>
+
+</body>
+</html>

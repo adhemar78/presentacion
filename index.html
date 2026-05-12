@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>I AM FAPC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+    img,
+iframe,
+video{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+table{
+    width:100%;
+    table-layout:fixed;
+}
+
+td,
+th{
+    overflow-wrap:break-word;
+}
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --navy:    #0a1628;
+    --blue1:   #1246a0;
+    --blue2:   #1e88e5;
+    --cyan:    #00c8e8;
+    --cyan-lt: #7ddff0;
+    --cyan-dk: #0097b5;
+    --gold:    #f0c040;
+    --radius:  14px;
+    --shadow:  0 4px 20px rgba(21,101,192,0.18);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #90caf9;
+    font-family: 'Nunito', sans-serif;
+    color: var(--navy);
+    margin: 0;
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* ===== TABLAS ===== */
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+td, th {
+    word-wrap: break-word;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+    background: linear-gradient(135deg, #0d1b3e 0%, #1565c0 50%, #0077b6 100%);
+    min-height: 110px;
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(13,27,62,0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+
+.titulo {
+    margin: 0;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.6rem, 5vw, 7rem);
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    position: relative;
+    line-height: 1.2;
+}
+
+/* ===== CAROUSEL ===== */
+/* ===== CAROUSEL ===== */
+.carousel-wrap {
+    border-radius: 15px;
+    max-width: 1300px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+#myCarousel {
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid var(--cyan-lt);
+    box-shadow: 0 8px 32px rgba(0,180,216,0.28);
+    width: 100%;
+}
+
+#myCarousel .item img {
+    width: 100%;
+    height: auto;                    /* Altura automática */
+    max-height: 520px;               /* Límite máximo en PC */
+    min-height: 200px;               /* Mínimo en móviles */
+    object-fit: contain;             /* ← ESTO ES LO IMPORTANTE */
+    display: block;
+    margin: 0 auto;
+
+}
+
+/* ===== NAV ===== */
+#indice {
+    background: linear-gradient(90deg, #0d1b3e, #1565c0);
+    box-shadow: 0 3px 5px rgba(13,27,62,0.35);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.nav-inner {
+    margin: 0 auto;
+    padding: 0.8rem 1rem;
+}
+
+.nav-title {
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+    font-size: clamp(1.8rem, 4vw, 4rem);
+    letter-spacing: 0.3em;
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+
+/* ===== CONTENEDOR DEL NAV ===== */
+#indice{
+    background: linear-gradient(90deg,#0d1b3e,#1565c0);
+
+    /* BORDE ENCERRADO COMO EN LA IMAGEN */
+    width: 82%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    border-radius: 0 0 18px 18px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.28),
+        0 0 0 2px rgba(125,223,240,.15);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    overflow: hidden;
+}
+
+/* ===== CONTENEDOR INTERNO ===== */
+.nav-inner{
+    width: 100%;
+
+    padding: .7rem 1rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== TITULO ===== */
+.nav-title{
+    font-family: 'Bebas Neue', sans-serif;
+
+    color: white;
+
+    font-size: clamp(1.8rem,4vw,4rem);
+
+    letter-spacing: .25em;
+
+    text-align: center;
+
+    margin-bottom: .7rem;
+
+    text-shadow: 0 2px 10px rgba(0,0,0,.35);
+}
+
+/* ===== MENU RESPONSIVE TIPO CARRUSEL ===== */
+.nav-links {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 0.6rem;
+
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    width: 100%;
+}
+
+/* ===== OCULTAR SCROLL ===== */
+.nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===== ITEMS ===== */
+.nav-links li {
+
+    flex: 0 0 auto;
+
+    scroll-snap-align: center;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== BOTONES ===== */
+.nav-links a {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 8px 16px;
+
+    background: rgba(255,255,255,0.12);
+
+    color: var(--cyan-lt) !important;
+
+    text-decoration: none;
+
+    font-weight: 400;
+
+    font-size: clamp(0.9rem, 2vw, 2rem);
+
+    border-radius: 100px;
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    letter-spacing: 0.06em;
+
+    white-space: nowrap;
+
+    min-width: max-content;
+
+    transition: 0.3s ease;
+}
+
+/* ===== HOVER ===== */
+.nav-links a:hover {
+
+    color: white !important;
+
+    background: rgba(255,255,255,0.2);
+
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px){
+
+    #indice{
+        width: 95%;
+        border-radius: 0 0 14px 14px;
+    }
+
+    .nav-links{
+        justify-content: flex-start;
+        padding-bottom: .2rem;
+    }
+
+    .nav-title{
+        font-size: 2rem;
+    }
+
+    .nav-links a{
+        font-size: .9rem;
+        padding: .6rem 1rem;
+    }
+}
+
+/* ===== BTN BACK ===== */
+.btn-back {
+    display: inline-block;
+    padding: 5px 14px;
+    background: rgba(255,255,255,0.12);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: clamp(0.9rem, 2vw, 2rem);
+    letter-spacing: 0.06em;
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,0.35);
+    margin-bottom: 0.4rem;
+    white-space: nowrap;
+}
+
+.btn-back:hover {
+    color: var(--cyan-lt);
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+    font-size: clamp(1.6rem, 4vw, 5rem);
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    margin: 0;
+}
+
+/* ===== MAIN TABLE ===== */
+.main-table {
+    border-collapse: separate !important;
+    border-spacing: 0;
+    border: none !important;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin: 1.5rem auto !important;
+    width: 96% !important;
+    max-width: 1200px;
+    background: white;
+    display: table !important;
+}
+
+.main-table th {
+    background: linear-gradient(135deg, #0d1b3e 0%, #1565c0 60%, #0077b6 100%) !important;
+    color: white !important;
+    padding: 0.8rem 1rem !important;
+    border: none !important;
+    text-align: center;
+    position: relative;
+}
+
+.main-table th::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    opacity: 0.6;
+}
+
+.main-table td {
+    border: 1px solid rgba(144,202,249,0.35) !important;
+    vertical-align: top;
+    padding: 0 !important;
+}
+
+/* ===== DP FILA ===== */
+.dp-fila {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 120px;
+}
+
+.celda1,
+.celda2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 10px;
+    text-align: center;
+}
+
+.celda1 {
+    background: linear-gradient(160deg, #bbdefb, #90caf9);
+}
+
+.celda2 {
+    background: linear-gradient(160deg, #e3f2fd, #bbdefb);
+}
+
+.celda1 h3,
+.celda2 h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 3rem);
+    letter-spacing: 0.06em;
+    color: #0d47a1;
+    margin-bottom: 6px;
+    margin-top: 0;
+}
+
+.celda1 h4,
+.celda2 h4 {
+    font-size: clamp(0.85rem, 2vw, 1.9rem);
+    font-weight: 600;
+    color: #1a237e;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ===== HOBBIES ===== */
+.hobby-celda {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px 8px 10px;
+    background: linear-gradient(160deg, #e3f2fd, #bbdefb);
+}
+
+.hobby-celda.alt {
+    background: linear-gradient(160deg, #bbdefb, #90caf9);
+}
+
+.hobby-celda h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1rem, 2vw, 2.4rem);
+    color: #0d47a1;
+    margin: 0 0 8px 0;
+}
+
+.hobby-celda img {
+    width: 100%;
+    height: 240px; /* MISMA ALTURA */
+    border-radius: 8px;
+    display: block;
+}
+
+/* ===== SUB HEADER ===== */
+.sub-th {
+    background: linear-gradient(90deg, #b3e5fc, #e0f7fa) !important;
+    color: #01579b !important;
+    padding: 0.5rem 1rem !important;
+    border-bottom: 2px solid var(--cyan-lt) !important;
+}
+
+.sub-th h2 {
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* ===== MUSIC ===== */
+.music-td {
+    padding: 1rem !important;
+    background: linear-gradient(160deg, #e3f2fd, #bbdefb);
+    text-align: center;
+}
+
+.music-td iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
+    max-width: 600px;
+    border-radius: 12px;
+    border: 2px solid var(--cyan-lt);
+    box-shadow: var(--shadow);
+}
+
+.music-td img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid var(--cyan-lt);
+}
+
+/* ===== GAME ===== */
+.game-td {
+    padding: 0 !important;
+    background: linear-gradient(160deg, #e3f2fd, #bbdefb);
+    text-align: center;
+}
+
+.game-td a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.game-td img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+/* ===== MISION VISION ===== */
+.mv-td {
+    padding: 1rem !important;
+}
+
+.mv-td:nth-child(odd) {
+    background: linear-gradient(160deg, #bbdefb, #90caf9);
+}
+
+.mv-td:nth-child(even) {
+    background: linear-gradient(160deg, #e3f2fd, #bbdefb);
+}
+
+.mv-td p {
+    line-height: 1.7;
+    font-size: clamp(0.9rem, 1.8vw, 1.5rem);
+}
+
+.mv-td img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ===== TASKS ===== */
+.task-td {
+    padding: 1rem !important;
+}
+
+.task-td:nth-child(odd) {
+    background: linear-gradient(160deg, #bbdefb, #90caf9);
+}
+
+.task-td:nth-child(even) {
+    background: linear-gradient(160deg, #e3f2fd, #bbdefb);
+}
+
+.task-td h2,
+.task-td h3 {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.task-td input[type="number"],
+.task-td input[type="text"] {
+    width: 100%;
+    border: 2px solid var(--cyan-lt);
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.task-td button {
+    background: #0d1b3e;
+    color: #00e5ff;
+    border: 2px solid #00b4d8;
+    border-radius: 8px;
+    padding: 7px 14px;
+    cursor: pointer;
+}
+
+.task-td button:hover {
+    background: #1565c0;
+}
+
+/* ===== TASK 3 ===== */
+.task3-td {
+    padding: 1rem !important;
+    text-align: center;
+    background: linear-gradient(160deg, #e3f2fd, #bbdefb);
+}
+
+.task3-box {
+    display: inline-block;
+    padding: 0.8rem 1rem;
+    background: #bbdefb;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.task3-box a {
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--blue1);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    background: linear-gradient(135deg, #0d1b3e, #1565c0);
+    padding: 1rem 2rem;
+    border-top: 3px solid var(--cyan);
+}
+
+footer a img {
+    width: clamp(60px, 10vw, 120px);
+    height: auto;
+    border-radius: 6px;
+}
+
+/* ==========================================================
+   RESPONSIVE MEJORADO
+========================================================== */
+
+/* ===== PANTALLAS GRANDES ===== */
+@media screen and (max-width: 1200px){
+
+    .main-table{
+        width:98% !important;
+    }
+
+    .titulo{
+        padding:0 10px;
+    }
+}
+
+/* ===== TABLETS ===== */
+@media screen and (max-width: 992px){
+
+    .carousel-wrap{
+        padding:0 .5rem;
+    }
+
+    .main-table{
+        width:99% !important;
+    }
+
+    .dp-fila{
+        display:flex;
+        flex-direction:row;
+        width:100%;
+    }
+
+    .celda1,
+    .celda2,
+    .hobby-celda{
+        flex:1;
+        min-width:0;
+    }
+
+    .music-td iframe{
+        width:100%;
+    }
+
+    .nav-links a{
+        font-size:1rem;
+        padding:9px 15px;
+    }
+}
+
+/* ===== MÓVILES ===== */
+@media screen and (max-width: 768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    .site-header{
+        min-height:auto;
+        padding:1rem;
+    }
+
+    .titulo{
+        font-size:2rem;
+        line-height:1.2;
+    }
+
+    .nav-title{
+        font-size:2rem;
+    }
+
+    .main-table{
+        width:100% !important;
+        border-radius:0;
+        margin:0 !important;
+    }
+
+    /* IMPORTANTE:
+       NO convertir toda la tabla en block
+    */
+
+    .main-table td,
+    .main-table th{
+        padding:0 !important;
+    }
+
+    /* Mantener las 4 columnas */
+    .dp-fila{
+        display:flex;
+        flex-direction:row !important;
+        width:100%;
+        gap:0;
+    }
+
+    .celda1,
+    .celda2,
+    .hobby-celda{
+        flex:1 1 50%;
+        width:50%;
+        min-width:0;
+        padding:12px 8px;
+    }
+
+    .celda1 h3,
+    .celda2 h3,
+    .hobby-celda h3{
+        font-size:1rem;
+    }
+
+    .celda1 h4,
+    .celda2 h4{
+        font-size:.82rem;
+    }
+
+    .hobby-celda img{
+        width:100%;
+        height:auto;
+    }
+
+    .music-td,
+    .game-td,
+    .mv-td,
+    .task-td,
+    .task3-td{
+        padding:.8rem !important;
+    }
+
+    .music-td iframe{
+        width:100%;
+        height:auto;
+    }
+
+    .game-td img,
+    .music-td img,
+    .mv-td img{
+        width:100%;
+        height:auto;
+    }
+
+    .task-td button{
+        flex:1 1 45%;
+    }
+
+    .nav-links{
+        gap:.4rem;
+        padding-bottom:.2rem;
+    }
+
+    .nav-links a{
+        font-size:.95rem;
+        padding:8px 14px;
+    }
+
+    footer{
+        gap:1rem;
+        padding:1rem;
+    }
+
+    footer a img{
+        width:70px;
+    }
+}
+
+/* ===== MÓVILES PEQUEÑOS ===== */
+@media screen and (max-width: 480px){
+
+    .titulo{
+        font-size:1.5rem;
+    }
+
+    .section-title{
+        font-size:1.4rem;
+    }
+
+    /* SIGUEN SIENDO 4 COLUMNAS */
+    .dp-fila{
+        flex-direction:row !important;
+    }
+
+    .celda1,
+    .celda2,
+    .hobby-celda{
+        width:50%;
+        flex:1 1 50%;
+        padding:10px 6px;
+    }
+
+    .celda1 h3,
+    .celda2 h3,
+    .hobby-celda h3{
+        font-size:.9rem;
+    }
+
+    .celda1 h4,
+    .celda2 h4{
+        font-size:.75rem;
+    }
+
+    .nav-links a{
+        font-size:.85rem;
+        padding:7px 12px;
+    }
+
+    .btn-back{
+        font-size:.8rem;
+    }
+
+    .task-td button{
+        width:100%;
+    }
+
+    footer{
+        flex-wrap:wrap;
+    }
+
+    footer a img{
+        width:55px;
+    }
+}
+
+/* ===== LANDSCAPE TELÉFONOS ===== */
+@media screen and (orientation: landscape) and (max-height: 600px){
+
+    .site-header{
+        min-height:auto;
+        padding:.7rem;
+    }
+
+    .titulo{
+        font-size:1.7rem;
+    }
+
+    .nav-title{
+        font-size:1.6rem;
+    }
+
+    .carousel-wrap{
+        margin:.5rem auto;
+    }
+
+    #myCarousel .item img{
+        max-height:300px;
+    }
+
+    .dp-fila{
+        flex-direction:row !important;
+    }
+
+    .celda1,
+    .celda2,
+    .hobby-celda{
+        flex:1;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="inicio">
+    <h1 class="titulo"><strong>FRANKLIN ADHEMAR PONGO CORI — MANCO POR EXCELENCIA</strong></h1>
+</header>
+
+<!-- CAROUSEL -->
+<div class="carousel-wrap">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="https://www.dropbox.com/scl/fi/p40h3u7nryo76nxkcylyg/hfinal.jpg?rlkey=t8rmoa02h2g9snob545acuhcz&st=cusazv5h&raw=1" alt="Half-life">
+            </div>
+            <div class="item">
+                <img src="https://www.dropbox.com/scl/fi/vhw8655rdo1ugjkfdzdku/Pfinal.jpg?rlkey=9ov6t7d8xvuxaxjem1z151oqh&st=ryumrar3&raw=1" alt="Portal">
+            </div>
+            <div class="item">
+                <img src="https://www.dropbox.com/scl/fi/lnu4vnj0z2lsdplcdh530/Cfinal.jpg?rlkey=1a2teywj6h2uukmb8whwzl6uy&st=0bed0xic&raw=1" alt="Evento">
+            </div>
+            <div class="item">
+                <img src="https://www.dropbox.com/scl/fi/ebrovk0e0rjjrpzbtqc4n/fff.jpg?rlkey=o6bxyhxtyr7fdaiexkk4m7fd1&st=fhj8t2oq&raw=1" alt="Evento">
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</div>
+
+<!-- NAV -->
+<div id="marcaIndice"></div>
+<div id="indice">
+    <div class="nav-inner">
+        <div class="nav-title">Índice</div>
+        <ul class="nav-links">
+            <li><a href="#DatosP">Datos Personales</a></li>
+            <li><a href="#DatosG">Datos Generales</a></li>
+            <li><a href="#Musica">Música favorita</a></li>
+            <li><a href="#Juegos">Juego favorito</a></li>
+            <li><a href="#MisionVision">Misión/Visión</a></li>
+            <li><a href="#Tareas">Tareas destacadas</a></li>
+        </ul>
+    </div>
+</div>
+<br>
+
+<!-- ===== TABLA PRINCIPAL ===== -->
+<table class="main-table" border="1">
+
+    <!-- DATOS PERSONALES -->
+    <tr id="DatosP">
+        <th colspan="2">
+            <a href="#inicio" class="btn-back">Volver al Inicio</a>
+            <div class="section-title">DATOS PERSONALES</div>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <div class="dp-fila">
+                <div class="celda1">
+                    <h3>Nombre Completo:</h3>
+                    <h4>Franklin Adhemar Pongo Cori</h4>
+                </div>
+                <div class="celda2">
+                    <h3>Fecha de Nacimiento:</h3>
+                    <h4>24 de Septiembre de 2004</h4>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="dp-fila">
+                <div class="celda1">
+                    <h3>Teléfono:</h3>
+                    <h4>71921217</h4>
+                </div>
+                <div class="celda2">
+                    <h3>C.I.:</h3>
+                    <h4>9956574</h4>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="dp-fila">
+                <div class="celda2">
+                    <h3>Ubicación:</h3>
+                    <h4><a href="https://maps.app.goo.gl/EZpJM6GtLYpbzQAE6" target="_blank">Google Maps</a></h4>
+                </div>
+                <div class="celda1">
+                    <h3>Estado Civil:</h3>
+                    <h4>Soltero</h4>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="dp-fila">
+                <div class="celda2">
+                    <h3>Ocupación:</h3>
+                    <h4>Estudiante</h4>
+                </div>
+                <div class="celda1">
+                    <h3>Correo Electrónico:</h3>
+                    <h4>franklinadhemar.pc@gmail.com</h4>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="dp-fila">
+                <div class="celda1">
+                    <h3>Universidad:</h3>
+                    <h4>Universidad Salesiana de Bolivia</h4>
+                </div>
+                <div class="celda2">
+                    <h3>Carrera:</h3>
+                    <h4>Ingeniería de Sistemas</h4>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="dp-fila">
+                <div class="celda1">
+                    <h3>Semestre:</h3>
+                    <h4>Séptimo</h4>
+                </div>
+                <div class="celda2">
+                    <h3>Edad:</h3>
+                    <h4>22 años</h4>
+                </div>
+            </div>
+        </td>
+    </tr>
+
+    <!-- DATOS GENERALES -->
+    <tr id="DatosG">
+        <th colspan="2">
+            <a href="#inicio" class="btn-back">Volver al Índice</a>
+            <div class="section-title">DATOS GENERALES</div>
+        </th>
+    </tr>
+    <tr>
+        <td colspan="2" class="sub-th"><h2>Pasatiempos</h2></td>
+    </tr>
+    <tr>
+        <td>
+            <div class="dp-fila">
+                <div class="hobby-celda">
+                    <h3>Jugar Videojuegos</h3>
+                    <img src="https://www.dropbox.com/scl/fi/76fsm2ihuxpefbxg6vl67/videojuegos-1.png?rlkey=ngcy416uido4bc1y3yfjts18l&st=0swh71fb&raw=1" alt="Videojuegos">
+                </div>
+                <div class="hobby-celda alt">
+                    <h3>Caminar y Sacar Fotos</h3>
+                    <img src="https://www.dropbox.com/scl/fi/j0oovpq6iguis9jifrb9w/sacarFotos-1-1.png?rlkey=huk9xawd4hfxy7eqkkf1ypma3&st=9udk1n65&raw=1" alt="Fotos">
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="dp-fila">
+                <div class="hobby-celda">
+                    <h3>Programar</h3>
+                    <img src="https://www.dropbox.com/scl/fi/dszoflgkzoa0fd0gx7lws/images-3-1.jpg?rlkey=98ls6pztswdkc4z95tnk4inpa&st=rbyxrjak&raw=1" alt="Programación">
+                </div>
+                <div class="hobby-celda alt">
+                    <h3>Series, Animes y Películas</h3>
+                    <img src="https://www.dropbox.com/scl/fi/e44psmhbr8wa05436sxoo/zBXap-5-1.jpg?rlkey=zwtn9aeczst0l0r0lg1r4qltk&st=nyycvgec&raw=1" alt="Series">
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="sub-th"><h2>Comidas Favoritas</h2></td>
+        <td class="sub-th"><h2>Mascotas</h2></td>
+    </tr>
+    <tr>
+        <td>
+            <div class="dp-fila">
+                <div class="hobby-celda">
+                    <h3>Sopa de Maní</h3>
+                    <img src="https://www.dropbox.com/scl/fi/60mwqu9tissnhyy35572q/sopa-3.jpg?rlkey=5vqbjszm6lu1i1w1lf2vw6w1m&st=llliggdm&raw=1" alt="Sopa de Maní">
+                </div>
+                <div class="hobby-celda alt">
+                    <h3>Tallarín al Tucu</h3>
+                    <img src="https://www.dropbox.com/scl/fi/b9uxkewrqtqso03deb6or/images-4-2.jpg?rlkey=4i5slgfibnxomc8du3zcc6p8o&st=wxzcf2vk&raw=1" alt="Tallarín">
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="dp-fila">
+                <div class="hobby-celda">
+                    <h3>Perro: Copito</h3>
+                    <img src="https://www.dropbox.com/scl/fi/fkkdx58zxlutkuwtes7n4/IMG_20241224_205544_586-1.jpg?rlkey=uy0eht4nyhz24i6mw2qtg4u0o&st=4u2fqquu&raw=1" alt="Copito">
+                </div>
+                <div class="hobby-celda alt">
+                    <h3>Gato: Pelusa</h3>
+                    <img src="https://www.dropbox.com/scl/fi/oxmfbuysjyupk7wldtqjb/IMG_20211023_073541_326-6.jpg?rlkey=7zmgqz9m1hdec7t2awn05o8vs&st=0dhtdjef&raw=1" alt="Pelusa">
+                </div>
+            </div>
+        </td>
+    </tr>
+
+    <!-- MÚSICA -->
+    <tr id="Musica">
+        <th colspan="2">
+            <a href="#inicio" class="btn-back">Volver al Índice</a>
+            <div class="section-title">CANCIÓN FAVORITA</div>
+        </th>
+    </tr>
+    <tr>
+        <td colspan="2" style="padding:0.6rem 1rem !important; background:linear-gradient(160deg,#e3f2fd,#bbdefb);">
+            <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.2rem,3vw,2rem);color:#01579b;margin:0;letter-spacing:0.08em;">AVICII — Waiting for Love</h2>
+        </td>
+    </tr>
+    <tr>
+        <td class="music-td">
+            <iframe src="https://www.youtube.com/embed/ZlWH6XQ2Fxo?loop=1&playlist=ZlWH6XQ2Fxo" allowfullscreen></iframe>
+        </td>
+        <td class="music-td" style="background:linear-gradient(160deg,#bbdefb,#90caf9);">
+            <img src="https://i.pinimg.com/736x/c1/0e/1c/c10e1c30123617d29234c607e2b6e521.jpg" alt="Avicii">
+        </td>
+    </tr>
+
+    <!-- JUEGOS -->
+    <tr id="Juegos">
+        <th colspan="2">
+            <a href="#indice" class="btn-back">Volver al Índice</a>
+            <div class="section-title">JUEGOS FAVORITOS</div>
+        </th>
+    </tr>
+    <tr>
+        <td colspan="2" class="game-td">
+            <a href="halflife.html">
+                <img src="https://gaming-cdn.com/images/products/2284/616x353/half-life-2-pc-mac-game-steam-cover.jpg?v=1650555068" alt="Half-Life 2">
+            </a>
+        </td>
+    </tr>
+
+    <!-- MISIÓN / VISIÓN -->
+    <tr id="MisionVision">
+        <th><div class="section-title">MISIÓN</div></th>
+        <th><div class="section-title">VISIÓN</div></th>
+    </tr>
+    <tr>
+        <td class="mv-td">
+            <p>Mi misión es aprender lo máximo posible en cada materia de la carrera de Ingeniería de Sistemas en la Universidad Salesiana de Bolivia, para crecer como persona y alcanzar mis metas futuras.</p>
+            <img src="https://www.dropbox.com/scl/fi/taejiihuae45fvbrf0ec0/misionf.jpg?rlkey=q1e950xwk4e4vx8cd5rz4za7j&st=w87v3hfz&raw=1" alt="Misión">
+        </td>
+        <td class="mv-td">
+            <p>Ser un profesional en el área de redes de comunicaciones o ciberseguridad, trabajando en entidades bancarias o empresas privadas. Mi objetivo es apoyar a la institución en la solución de problemas, siempre con honestidad y respeto.</p>
+            <img src="https://www.dropbox.com/scl/fi/kwqh8k07exw9lte2ql2mq/visionf.jpg?rlkey=jmfpq43tqf3b9fagcgzuu5rvr&st=66xg35qr&raw=1" alt="Visión">
+        </td>
+    </tr>
+
+    <!-- TAREAS -->
+    <tr id="Tareas">
+        <th colspan="2">
+            <a href="#inicio" class="btn-back">Volver al Inicio</a>
+            <div class="section-title">TAREAS DESTACADAS</div>
+        </th>
+    </tr>
+    <tr>
+        <td style="padding:0.5rem 1rem !important;background:linear-gradient(90deg,#b3e5fc,#e0f7fa);">
+            <h2 class="tarea-label">Tarea 1</h2>
+        </td>
+        <td style="padding:0.5rem 1rem !important;background:linear-gradient(90deg,#b3e5fc,#e0f7fa);">
+            <h2 class="tarea-label">Tarea 2</h2>
+        </td>
+    </tr>
+    <tr>
+        <td class="task-td">
+            <h3>Generador de Números Primos FAPC</h3>
+            <label>Hasta qué número:</label>
+            <input type="number" id="limite" value="100" min="2">
+            <button onclick="generar()">Generar</button>
+            <p id="resultado"></p>
+        </td>
+        <td class="task-td">
+            <h3>Calculadora</h3>
+            <label>Primer número:</label>
+            <input type="text" id="v1">
+            <label>Segundo número:</label>
+            <input type="text" id="v2">
+            <div style="margin:0.4rem 0; display:flex; flex-wrap:wrap; gap:0.3rem;">
+                <button onclick="operar('sumar')">Sumar</button>
+                <button onclick="operar('restar')">Restar</button>
+                <button onclick="operar('mult')">Multiplicar</button>
+                <button onclick="operar('div')">Dividir</button>
+            </div>
+            <label>Resultado:</label>
+            <input type="text" id="calcRes" readonly>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="task3-td">
+            <div class="task3-box">
+                <a href="Actividad1.html">📋 Tarea 3: Menú de Promociones de Restaurante</a>
+            </div>
+        </td>
+    </tr>
+
+</table>
+
+<!-- FOOTER -->
+<footer>
+    <a href="https://www.facebook.com/franklinadhemar.pongocori" target="_blank">
+        <img src="https://www.dropbox.com/scl/fi/620x6pyux3llpbm99ab1o/7101d598cb5156e5670771476183ae8f-2.jpg?rlkey=5zdg2layxgey7c5quug7plrb7&st=u7jmyows&raw=1" alt="Facebook">
+    </a>
+    <a href="https://www.tiktok.com/@arroz.con.leche486?is_from_webapp=1&sender_device=pc" target="_blank">
+        <img src="https://www.dropbox.com/scl/fi/fnl8ndtutb6t6gop9p9nc/png-transparent-tiktok-banner-black-hd-logo-1.png?rlkey=5a3uvlf5xirmmdc6mc74scwaj&st=2gm704dp&raw=1" alt="TikTok">
+    </a>
+    <a href="https://www.instagram.com/pongocori/" target="_blank">
+        <img src="https://www.dropbox.com/scl/fi/dm6cz65t0n3ykne1oaqli/images-5-1.jpg?rlkey=rj1zpe69frgw6g75uh8696kx9&st=ck9h1xvx&raw=1" alt="Instagram">
+    </a>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuOriginal = document.getElementById("indice");
+
+    /* ===== CREAR MENU NUEVO ===== */
+    const menuFixed = menuOriginal.cloneNode(true);
+
+    menuFixed.id = "indice-fixed";
+
+    /* ===== ELIMINAR TITULO ===== */
+    const titulo = menuFixed.querySelector(".nav-title");
+
+    if (titulo) {
+        titulo.remove();
+    }
+
+    /* ===== AGREGAR AL BODY ===== */
+    document.body.appendChild(menuFixed);
+
+    /* ===== ESTILOS ===== */
+menuFixed.style.position = "fixed";
+menuFixed.style.top = "-120px";
+menuFixed.style.left = "50%";
+menuFixed.style.transform = "translateX(-50%)";
+
+menuFixed.style.width = "82%";
+menuFixed.style.maxWidth = "1200px";
+
+menuFixed.style.zIndex = "9999";
+
+menuFixed.style.transition = "all .35s ease";
+
+menuFixed.style.opacity = "0";
+
+/* ===== FONDO COMO MENU ORIGINAL ===== */
+menuFixed.style.background =
+    "linear-gradient(90deg, #0d1b3e, #1565c0)";
+
+menuFixed.style.boxShadow =
+    "0 8px 20px rgba(0,0,0,.28), 0 0 0 2px rgba(125,223,240,.15)";
+
+menuFixed.style.borderRadius =
+    "0 0 18px 18px";
+
+menuFixed.style.overflow =
+    "hidden";
+
+    /* ===== MENU ORIGINAL NO SE MUEVE ===== */
+    menuOriginal.style.position = "relative";
+
+    /* ===== MOSTRAR MENU CLON ===== */
+    window.addEventListener("scroll", function () {
+
+        const activar = menuOriginal.offsetTop + 100;
+
+        if (window.scrollY > activar) {
+
+            menuFixed.style.top = "0";
+            menuFixed.style.opacity = "1";
+
+        } else {
+
+            menuFixed.style.top = "-120px";
+            menuFixed.style.opacity = "0";
+        }
+    });
+
+    function ajustarMenu() {
+
+    /* ===== CELULAR ===== */
+    if (window.innerWidth <= 768) {
+
+        menuFixed.style.width = "95%";
+
+        const links = menuFixed.querySelector(".nav-links");
+
+        links.style.justifyContent = "center";
+
+    }
+
+    /* ===== HORIZONTAL CELULAR ===== */
+    if (
+        window.innerWidth <= 950 &&
+        window.innerHeight <= 500
+    ) {
+
+        menuFixed.style.width = "92%";
+
+        const links = menuFixed.querySelector(".nav-links");
+
+        links.style.justifyContent = "center";
+    }
+
+    /* ===== PC ===== */
+    if (window.innerWidth > 768) {
+
+        menuFixed.style.width = "82%";
+
+        const links = menuFixed.querySelector(".nav-links");
+
+        links.style.justifyContent = "center";
+    }
+}
+});
+
+/* ===== PRIMOS ===== */
+function esPrimo(n) {
+    if (n < 2) return false;
+
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+
+        if (n % i === 0) return false;
+    }
+
+    return true;
+}
+
+function generar() {
+
+    const cantidad = parseInt(document.getElementById("limite").value);
+
+    const primos = [];
+
+    let i = 2;
+
+    while (primos.length < cantidad) {
+
+        if (esPrimo(i)) primos.push(i);
+
+        i++;
+    }
+
+    document.getElementById("resultado").textContent = primos.join(", ");
+}
+
+/* ===== CALCULADORA ===== */
+function operar(op) {
+
+    const n1 = parseFloat(document.getElementById("v1").value);
+
+    const n2 = parseFloat(document.getElementById("v2").value);
+
+    if (isNaN(n1) || isNaN(n2)) {
+
+        document.getElementById("calcRes").value =
+            "Error: valores inválidos";
+
+        return;
+    }
+
+    let res;
+
+    if (op === 'sumar')  res = n1 + n2;
+
+    if (op === 'restar') res = n1 - n2;
+
+    if (op === 'mult')   res = n1 * n2;
+
+    if (op === 'div') {
+
+        if (n2 === 0) {
+
+            document.getElementById("calcRes").value =
+                "Error: no se puede dividir entre cero";
+
+            return;
+        }
+
+        res = n1 / n2;
+    }
+
+    document.getElementById("calcRes").value = res;
+}
+</script>
+</body>
+</html>
